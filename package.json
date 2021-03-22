@@ -1,0 +1,26 @@
+{
+  "name": "sebas",
+  "version": "1.0.0",
+  "description": "Bot de gestion communautaire",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0Blanck0/SebasBot.git"
+  },
+  "keywords": [
+    "Discord"
+  ],
+  "author": "Alexandre ELISABETH",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0Blanck0/SebasBot/issues"
+  },
+  "homepage": "https://github.com/0Blanck0/SebasBot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "mysql": "^2.18.1"
+  }
+}

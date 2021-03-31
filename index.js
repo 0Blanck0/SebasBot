@@ -6,16 +6,17 @@
  */
 
 const Discord = require("discord.js");
-const MySQL = require('mysql');
+//const MySQL = require('mysql');
+const test = require('class/db.js');
 const Client = new Discord.Client();
 const Markdown = "!"
 
-var con = MySQL.createConnection({
-    host: "localhost",
-    user: "SebasBot",
-    password: "SebasConnection",
-    database: "discord_bot"
-});
+// var con = MySQL.createConnection({
+//     host: "localhost",
+//     user: "SebasBot",
+//     password: "SebasConnection",
+//     database: "discord_bot"
+// });
 
 // Bot identification
 Client.login("ODIzMjgyNDE0MDgzMjQ0MDMz.YFejfw.tCZ5O9GQ3zD7gjFhkqZnuf7b7jg");
@@ -23,11 +24,11 @@ Client.login("ODIzMjgyNDE0MDgzMjQ0MDMz.YFejfw.tCZ5O9GQ3zD7gjFhkqZnuf7b7jg");
 // Listerner get ready to use bot
 Client.once('ready', () => {
     console.log(" -- I'm online");
-      
-    con.connect(function(err) {
-        if (err) throw err;
-        console.log(" -- I'm connected to MySQL database");
-    });
+    var tet = new test.db();
+    // con.connect(function(err) {
+    //     if (err) throw err;
+    //     console.log(" -- I'm connected to MySQL database");
+    // });
 });
 
 Client.on('guildCreate', (new_guild) => {
@@ -68,10 +69,10 @@ function add_new_server(name, guild, owner, nb_numbers)
 {
     var sql = "INSERT INTO server_list (name, guild, ownerID, nb_members) VALUES ('" + name + "', '" + guild + "', '" + owner + "', " + nb_numbers + ")";
 
-    con.query(sql, function (err, result) {
-        if (err) throw err;
-        console.log("1 record inserted");
-    });
+    // con.query(sql, function (err, result) {
+    //     if (err) throw err;
+    //     console.log("1 record inserted");
+    // });
 }
 
 /*****************

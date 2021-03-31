@@ -143,7 +143,7 @@ function ping(message)
 // Function reply to hello command
 function hello(message)
 {
-    message.reply("Hello !");
+    message.reply("Hello " + message.author.username + " !");
     sebas_has_been("hello", message);
 }
 

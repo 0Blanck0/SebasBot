@@ -31,18 +31,7 @@ Client.once('ready', () => {
 });
 
 Client.on('guildCreate', (new_guild) => {
-    //add_new_server(new_guild.name, new_guild, new_guild.owner.user.tag, new_guild.memberCount);
-    // new_guild.members.fetch()
-    // .then(console.log)
-    // .catch(console.error);
-    new_guild.members.fetch(new_guild.ownerID)
-    .then((result) => {
-        console.log(result.user);
-
-        if (result.user.id == new_guild.ownerID)
-            console.warn("ok");
-    })
-    .catch(console.error);
+    add_new_server(new_guild.name, new_guild, new_guild.ownerID, new_guild.memberCount);
     sebas_std_logs("new on a server");
 });
 
@@ -77,7 +66,7 @@ Client.on('message', (message) => {
 
 function add_new_server(name, guild, owner, nb_numbers) 
 {
-    var sql = "INSERT INTO server_list (name, guild, owner, nb_members) VALUES ('" + name + "', '" + guild + "', '" + owner + "', " + nb_numbers + ")";
+    var sql = "INSERT INTO server_list (name, guild, ownerID, nb_members) VALUES ('" + name + "', '" + guild + "', '" + owner + "', " + nb_numbers + ")";
 
     con.query(sql, function (err, result) {
         if (err) throw err;
@@ -106,7 +95,7 @@ function get_banner(message)
 function get_help(message)
 {
     let banner = get_banner(message);
-    
+
     const helpEmbed = new Discord.MessageEmbed()
 	.setColor('#0099ff')
 	.setTitle('Help for Sebas Bot')

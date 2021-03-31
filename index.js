@@ -105,6 +105,8 @@ function get_banner(message)
 // Function reply help message
 function get_help(message)
 {
+    let banner = get_banner(message);
+    
     const helpEmbed = new Discord.MessageEmbed()
 	.setColor('#0099ff')
 	.setTitle('Help for Sebas Bot')

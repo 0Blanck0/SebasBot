@@ -138,7 +138,6 @@ function ping(message)
 	.setDescription('Bot reply :')
 	.setThumbnail(Client.user.avatarURL())
 	.addFields(
-        { name: '\u200B', value: '\u200B' },
 		{ name: 'Pong !', value: "Ping ms: " + (message.createdAt.getTime() - (new Date().getTime())) },
         { name: '\u200B', value: '\u200B' }
 	)

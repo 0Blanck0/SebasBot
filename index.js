@@ -163,5 +163,5 @@ function sebas_has_been(command, message)
 // Fonction send generique log in console
 function sebas_std_logs(command)
 {
-    console.log(new Date() + ": commande " + command + " has been run");
+    console.log(new Date() + ": commande [" + command + "] has been run");
 }

@@ -7,7 +7,7 @@
 
 const Discord = require("discord.js");
 //const MySQL = require('mysql');
-const test = require('class/db.js');
+const test = require('db.js');
 const Client = new Discord.Client();
 const Markdown = "!"
 

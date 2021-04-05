@@ -21,6 +21,7 @@
   "homepage": "https://github.com/0Blanck0/SebasBot#readme",
   "dependencies": {
     "discord.js": "^12.5.1",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "nodemailer": "^6.5.0"
   }
 }
